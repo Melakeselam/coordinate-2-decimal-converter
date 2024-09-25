@@ -146,3 +146,16 @@ select {
     padding:10px; 
     z-index:1000;
 }
+
+/* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Make the footer span the entire width */
+    background-color: #333; /* Dark gray background */
+    color: white; /* White text */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Add some padding */
+    z-index: 1000; /* Ensure it stays on top */
+}

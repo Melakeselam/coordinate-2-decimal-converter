@@ -6,7 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultContainer = document.getElementById('resultContainer');
     const resultText = document.getElementById('result');
     const copyBtn = document.getElementById('copyBtn');
-    const banner = document.getElementById('banner'); // New banner element for success message
+    const banner = document.getElementById('banner');
+    const userCountElement = document.getElementById('userCount');
+    const likeCountElement = document.getElementById('likeCount');
+    const likeBtn = document.getElementById('likeBtn');
+
+    let userCount = 0; // User counter
+    let likeCount = 0; // Like counter
 
     // Function to update placeholders based on conversion type
     const updatePlaceholders = () => {
@@ -133,6 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resultText.innerHTML = result;
         resultContainer.style.display = 'flex';
         copyBtn.style.display = 'inline-block';
+
+        // Increment user count
+        userCount += 1;
+        userCountElement.innerText = `Users: ${userCount}`;
     });
 
     // Event listener for copy button
@@ -141,14 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
         textToCopy = textToCopy.replace('Latitude: ','')
         textToCopy = textToCopy.replace('Longitude: ','')
         navigator.clipboard.writeText(textToCopy).then(() => {
-            showBanner(`Coordinates (${textToCopy}) copied to clipboard.`);
+            showBanner('Coordinates copied to clipboard.');
         }).catch(err => {
             showBanner('Failed to copy coordinates.', 'red');
         });
     });
 
     // Function to show the green banner with a success message
-    const showBanner = (message, color = '#41b45c') => {
+    const showBanner = (message, color = '#46a15c') => {
         banner.innerText = message;
         banner.style.backgroundColor = color;
         banner.style.display = 'block';
@@ -157,6 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.style.display = 'none';
         }, 5000); // Banner disappears after 5 seconds
     };
+
+    // Like button functionality
+    likeBtn.addEventListener('click', () => {
+        likeCount += 1;
+        likeCountElement.innerText = `Likes: ${likeCount}`;
+    });
 
     // Initialize placeholders
     updatePlaceholders();
