@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lat/Long to Decimal Converter</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-container">
+            <img src="./imgs/logo.png" alt="App Logo" class="logo" />
+            <h1>Latitude & Longitude to Decimal Converter</h1>
+        </div>
+        <div class="input-container">
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitude" placeholder="e.g., 9°00'39.2&quot; N">
+        </div>
+        <div class="input-container">
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitude" placeholder="e.g., 38°51'23.5&quot; E">
+        </div>
+        <div class="button-container">
+            <button id="convertBtn">Convert to Decimal</button>
+        </div>
+
+        <div id="resultContainer" class="result-container" style="display:none;">
+            <p id="result" class="result"></p>
+            <button id="copyBtn" class="copy-btn">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
