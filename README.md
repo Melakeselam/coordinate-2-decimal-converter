@@ -13,7 +13,7 @@ This web tool allows users to easily convert latitude and longitude coordinates 
 3. Copy the result using the **Copy to Clipboard** button.
 
 ## Live Demo
-[Link to the live app]
+[[Link to the live app](https://melakeselam.github.io/coordinate-2-decimal-converter/)]
 
 ## License
 This project is licensed under the MIT License.
