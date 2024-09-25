@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultContainer = document.getElementById('resultContainer');
     const resultText = document.getElementById('result');
     const copyBtn = document.getElementById('copyBtn');
+    const banner = document.getElementById('banner'); // New banner element for success message
 
     // Function to update placeholders based on conversion type
     const updatePlaceholders = () => {
@@ -21,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to handle paste events
     const handlePaste = (event) => {
-
         const conversionType = conversionTypeSelect.value;
         const pastedData = event.clipboardData.getData('text').trim();
         const splitData = pastedData.split(/\s+|\s*,\s*/);
@@ -141,11 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
         textToCopy = textToCopy.replace('Latitude: ','')
         textToCopy = textToCopy.replace('Longitude: ','')
         navigator.clipboard.writeText(textToCopy).then(() => {
-            alert('Coordinates copied to clipboard.');
+            showBanner(`Coordinates (${textToCopy}) copied to clipboard.`);
         }).catch(err => {
-            alert('Failed to copy coordinates.');
+            showBanner('Failed to copy coordinates.', 'red');
         });
     });
+
+    // Function to show the green banner with a success message
+    const showBanner = (message, color = '#41b45c') => {
+        banner.innerText = message;
+        banner.style.backgroundColor = color;
+        banner.style.display = 'block';
+
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 5000); // Banner disappears after 5 seconds
+    };
 
     // Initialize placeholders
     updatePlaceholders();
