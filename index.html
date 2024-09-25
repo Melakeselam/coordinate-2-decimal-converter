@@ -15,21 +15,34 @@
             <img src="./imgs/logo.png" alt="App Logo" class="logo" />
             <h1>Latitude & Longitude to Decimal Converter</h1>
         </div>
+        <!-- Conversion Type Dropdown -->
         <div class="input-container">
-            <label for="latitude">Latitude</label>
-            <input type="text" id="latitude" placeholder="e.g., 9°00'39.2&quot; N">
-        </div>
-        <div class="input-container">
-            <label for="longitude">Longitude</label>
-            <input type="text" id="longitude" placeholder="e.g., 38°51'23.5&quot; E">
-        </div>
-        <div class="button-container">
-            <button id="convertBtn">Convert to Decimal</button>
+            <label for="conversionType">Select Conversion Type</label>
+            <select id="conversionType">
+                <option value="dmsToDecimal">DMS to Decimal</option>
+                <option value="decimalToDms">Decimal to DMS</option>
+            </select>
         </div>
 
-        <div id="resultContainer" class="result-container" style="display:none;">
+        <!-- Input for Latitude -->
+        <div class="input-container">
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitude" placeholder="e.g., 9°00'39.2&quot;N">
+        </div>
+
+        <!-- Input for Longitude -->
+        <div class="input-container">
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitude" placeholder="e.g., 38°51'23.5&quot;E">
+        </div>
+
+        <div class="button-container">
+            <button id="convertBtn">Convert</button>
+        </div>
+
+        <div id="resultContainer" class="result-container">
             <p id="result" class="result"></p>
-            <button id="copyBtn" class="copy-btn">Copy to Clipboard</button>
+            <button id="copyBtn" class="copy-btn" style="display:none;">Copy to Clipboard</button>
         </div>
     </div>
 
